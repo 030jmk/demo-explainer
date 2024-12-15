@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explainer</title>
+    <style>
+    body {  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+    text-align: center;  
+    display: flex;  
+    flex-direction: column; /* Align items vertically */  
+    align-items: center; 
+    padding: 20px;  
+    background-color: black;  
+    }  
+    p, h1 {
+        color: white;
+    }
+    a {
+    text-decoration:none
+}
+    
+    button {
+        padding: 15px 30px;  
+        font-size: 18px;  
+        text-align: left;
+        color: white;  
+        background-color: transparent;
+        border: 2px solid #dc6900;
+        border-radius: 5px;   
+        cursor: pointer;  
+        transition: all 0.3s ease;  
+        display: block;
+        width: 100%;
+        margin-top: 10%;
+    }      
+    button:hover {    
+        background-color: #dc6900;
+        color: white;    
+    }    
+    button a {  
+        color: inherit;  
+        text-decoration: none;    
+    }   
+    
+    button:hover {    
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);     
+    }    
+
+    </style>
+</head>
+<body>
+    <h1>Prototype Explainer</h1>
+    <p>Press a Button to start the Explainer</p>
+
+    {% for video in videos %}  
+        <a href="{{ url_for('play_video', filename=video[0]) }}">   
+            <button class="button">{{ video[1] }}</button>      
+        </a>      
+    {% endfor %}   
+
+</body>
+</html>
